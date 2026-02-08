@@ -100,16 +100,22 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
     display: block;
 }
 
-.hero-section {
-    background-color: #00ff00;
-    padding: 5px;
+.hero-section { 
+    background-color: linear-gradient(
+        135deg,
+        var(--clr-primary),
+        var(--clr-secondary)
+    );
+    color: #fff;
+    padding: var(--space-lg) var(--space-md);
     text-align: center;
-    border: 10px double #ff0000;
+    border-radius: var(--radius-md);
+     box-shadow: var(--shadow-md);
 }
 
 .hero-title { /* fixed heading (phase 2) */
     font-size: 3rem;
-    color: white;
+    color: var(--clr-text);
     text-transform: uppercase;
     letter-spacing: normal;
     text-shadow: none;
@@ -117,7 +123,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .hero-subtitle { /* fixed heading (phase 2) */
     font-size: var(--fs-sm);
-    color: #f0f0f0;
+    color: var(--clr-text);
     margin: 2px 0;
 }
 
