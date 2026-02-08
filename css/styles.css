@@ -1,30 +1,60 @@
+:root { /* Set up CSS variables for your new design system (phase 2.1) */
+    /* Colours */
+    --clr-bg: #fafafa; /* Background colour */
+    --clr-surface: #ffffff;
+    --clr-primary: #ff7a18; /* Primary colour */
+    --clr-secondary: #4caf50; /* secondary colour */
+    --clr-text: #333; /* Colour */
+    --clr-muted: #777;
+
+    /* Typography */
+    --fs-base: 16px;
+    --fs-sm: 14px;
+    --fs-lg: 24px;
+    --fs-xl: 36px;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
+
+    /* UI */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --shadow-sm: 0 4px 10px rgba(0,0,0,0.08);
+    --shadow-md: 0 10px 25px rgba(0,0,0,0.12);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Times, serif;
-    background-color: #ff00ff;
-    color: #00ff00;
-    line-height: 1;
+body { /* fixed (phase 2) */
+    font-family: Arial, sans-serif;
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    font-size: var(--fs-base);
+    line-height: 1.6;
 }
 
-.main-header {
-    background-color: #ffff00;
-    border: 5px solid #ff0000;
-    padding: 5px;
+.main-header { /* fixed navigation layout (phase 3) */
+    background-color: var(--clr-surface);
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    box-shadow: var(--shadow-sm);
 }
 
 .header-content {
     text-align: left;
 }
 
-.site-title {
-    color: #0000ff;
-    font-size: 50px;
-    text-decoration: underline;
+.site-title { /* fixed heading (phase 2) */
+    color: var(--clr-text);
+    font-size: var(--fs-xl);
+    text-decoration: none;
     font-weight: normal;
 }
 
@@ -32,9 +62,10 @@ body {
     margin-top: 10px;
 }
 
-.nav-list {
-    list-style: decimal;
-    display: block;
+.nav-list { /* fixed navigation layout (phase 3) */
+    list-style: none;
+    display: flex;
+    gap: var(--space-sm);
 }
 
 .nav-list li {
@@ -42,18 +73,18 @@ body {
     margin-right: 5px;
 }
 
-.nav-list a {
-    color: #ff0000;
+.nav-list a { /* fixed navigation layout (phase 3) */
+    color: var(--clr-text);
     text-decoration: none;
-    background-color: #00ffff;
-    padding: 2px;
-    border: 2px dotted #000000;
-    font-size: 8px;
+    background-color: transparent;
+    padding: 0.5rem 0.75rem;
+    border: var(--radius-sm);
+    font-size: var(--fs-sm);
 }
 
-.nav-list a:hover {
-    color: #ffffff;
-    background-color: #000000;
+button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
+    color: white;
+    background-color: var(--clr-primary);
 }
 
 .main-content {
@@ -76,17 +107,17 @@ body {
     border: 10px double #ff0000;
 }
 
-.hero-title {
-    font-size: 80px;
-    color: #ff00ff;
+.hero-title { /* fixed heading (phase 2) */
+    font-size: 3rem;
+    color: white;
     text-transform: uppercase;
-    letter-spacing: 10px;
-    text-shadow: 5px 5px #000000;
+    letter-spacing: normal;
+    text-shadow: none;
 }
 
-.hero-subtitle {
-    font-size: 6px;
-    color: #0000ff;
+.hero-subtitle { /* fixed heading (phase 2) */
+    font-size: var(--fs-sm);
+    color: #f0f0f0;
     margin: 2px 0;
 }
 
@@ -95,52 +126,61 @@ body {
     text-align: left;
 }
 
-.search-input {
-    width: 100px;
-    padding: 1px;
-    font-size: 8px;
-    border: 3px solid #ff0000;
-    background-color: #ffff00;
-    color: #000000;
+.search-input { /* Style forms and search functionality (phase 3.4) */
+    width: 100%;
+    padding: 0.75rem;
+    font-size: var(--fs-sm);
+    border-radius: var(--radius-sm);
+    border: 1px solid #ccc;
 }
 
-.search-button, .clear-button {
-    padding: 1px 3px;
-    background-color: #ff00ff;
-    color: #ffffff;
-    border: 2px solid #000000;
-    font-size: 6px;
+.search-button, .clear-button { /* Style forms and search functionality (phase 3.4) */
+    padding: 0.75rem 1rem;
+    font-size: var(--fs-sm);
+    background: var(--clr-primary);
+    border: none;
+    border-radius: var(--radius-sm);
     cursor: pointer;
 }
 
-.filter-section {
-    background-color: #ffff00;
-    padding: 2px;
-    margin: 5px 0;
+.filter-section { /* Style forms and search functionality (phase 3.4) */ /* Fix the basic typography and readability issues (phase 2.2) */
+    background-color: var(--clr-bg);
+    padding:  var(--space-md);
+    margin: var(--space-md) 0;
+    border-radius: var(--radius-md);
 }
 
-.filter-section h3 {
-    color: #ff0000;
-    font-size: 10px;
-    text-align: right;
+.filter-section h3 { /* Fix the basic typography and readability issues (phase 2.2) */
+    color: var(--clr-text);
+    font-size: var(--fs-sm);
+    text-align: left;
+    margin-bottom: var(--space-sm);
 }
 
-.filter-buttons {
-    margin-top: 2px;
+.filter-buttons { /* Style forms and search functionality (phase 3.4) */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
 }
 
-.filter-btn {
-    background-color: #00ffff;
-    color: #000000;
-    border: 1px solid #ff0000;
-    padding: 1px 2px;
-    margin: 1px;
-    font-size: 5px;
+.filter-btn { /* Style forms and search functionality (phase 3.4) */
+    background-color: var(--clr-surface);
+    color: var(--clr-text);
+    border: 1px solid #d1d5db;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--fs-sm);
     cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .filter-btn.active {
-    background-color: #ff0000;
+    background-color: var(--clr-secondary);
+    color: #ffffff;
+}
+
+.filter-btn:hover { /* Add hover effects and micro-interactions (phase 4.1) */
+    background-color: var(--clr-primary);
     color: #ffffff;
 }
 
@@ -151,76 +191,103 @@ body {
     text-decoration: underline;
 }
 
-.sort-controls {
-    margin: 3px 0;
-    text-align: right;
+.sort-controls { /* Fix navigation and basic user flow (phase 2.5) */
+    margin: var(--space-md) 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--space-sm);
 }
 
-.sort-controls label {
-    font-size: 4px;
-    color: #ff00ff;
+.sort-controls label { /* Fix navigation and basic user flow (phase 2.5) */
+    font-size: var(--fs-sm);
+    color: var(--clr-text);
 }
 
-.sort-dropdown {
-    font-size: 4px;
-    background-color: #ffff00;
+.sort-dropdown { /* Fix navigation and basic user flow (phase 2.5) */
+    font-size: var(--fs-sm);
+    background-color: var(--clr-surface);
+    color: var(--clr-text);
     border: 1px solid #000000;
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-sm);
+    cursor: pointer;
+    transition: border-color 0.2s ease;
 }
 
-.recipe-grid {
-    display: block;
-    margin: 10px 0;
+.sort-dropdown:focus, .sort-dropdown:hover { /* Add hover effects and micro-interactions (phase 4.1) */
+    outline: none;
+    border-color: var(--clr-primary);
 }
 
-.recipe-card {
-    border: 3px solid #ff0000;
-    background-color: #00ff00;
+.recipe-grid { /* Redesign the homepage with CSS Grid (phase 3.1) */
+    display: grid;
+    margin: var(--space-md);
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.recipe-card { /* Create beautiful recipe cards using Flexbox (phase 3.2) */
+    border: none;
+    background-color: var(--clr-surface);
+    border-radius: var(--radius-md);
     margin: 5px 0;
-    padding: 3px;
+    padding: var(--space-sm);
     width: 100%;
     text-align: left;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Visual Polish (phase 4.1) */
 }
 
-.recipe-image {
-    width: 50px;
-    height: 50px;
+.recipe-card:hover { /* Visual Polish (phase 4.1) */
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.recipe-image { /* Fix image presentation and sizing (phase 3.5) */
+    width: 100%;
+    height: 180px;
     object-fit: cover;
-    border: 2px solid #0000ff;
-    float: right;
+    border: none;
+    border-radius: var(--radius-sm);
 }
 
-.recipe-title {
-    font-size: 8px;
-    color: #ff00ff;
-    margin: 1px 0;
-    text-transform: uppercase;
+.recipe-title { /* Create beautiful recipe cards using Flexbox (phase 3.2) */
+    font-size: var(--fs-lg);
+    color: var(--clr-text);
+    margin: 1px 0; /* consider changing margin */
+    text-transform: none;
 }
 
-.recipe-category {
-    font-size: 4px;
+.recipe-category { /* Improve the recipe detail page layout (phase 3.3) */ 
+    font-size: var(--fs-base);
     color: #000000;
     background-color: #ffffff;
     padding: 1px;
     display: inline-block;
 }
 
-.recipe-time {
-    font-size: 3px;
+.recipe-time { /* Improve the recipe detail page layout (phase 3.3) */ 
+    font-size: var(--fs-base);
     color: #0000ff;
 }
 
-.recipe-difficulty {
-    font-size: 3px;
+.recipe-difficulty { /* Improve the recipe detail page layout (phase 3.3) */ 
+    font-size: var(--fs-base);
     color: #ff0000;
 }
 
-.recipe-rating {
-    font-size: 2px;
-    color: #ffff00;
+.recipe-rating { /* Improve the recipe detail page layout (phase 3.3) */ 
+    font-size: var(--fs-base);
+    color: var(--clr-secondary);
+    border: #000000;
 }
 
-.recipe-description {
-    font-size: 3px;
+.recipe-description { /* Improve the recipe detail page layout (phase 3.3) */ /*need to change this */
+    font-size: var(--fs-base);
     color: #000000;
     margin: 2px 0;
     line-height: 1;
@@ -230,89 +297,121 @@ body {
     margin-top: 2px;
 }
 
-.favorite-btn, .view-btn {
-    background-color: #ff00ff;
+.favorite-btn, .view-btn { /* Fix image presentation and sizing (phase 3.5) */
+    background-color: var(--clr-primary);
     color: #ffffff;
-    border: 1px solid #000000;
-    padding: 1px;
-    font-size: 3px;
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--fs-sm);
     cursor: pointer;
-    margin-right: 1px;
+    margin-right: var(--space-xs);
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Implement smooth transitions (phase 4.2) */
 }
 
+.favorite-btn:hover, .view-btn:hover { /* Add hover effects and micro-interactions (phase 4.1) */
+    background-color: var(--clr-secondary);
+    transform: translateY(-1px);
+}
+
+
 .favorite-btn.favorited {
-    background-color: #ff0000;
+    background-color: var(--clr-secondary);
 }
 
 .no-results, .no-favorites {
     text-align: center;
-    color: #0000ff;
-    font-size: 6px;
-    background-color: #ffff00;
-    padding: 5px;
-    border: 2px solid #ff0000;
+    color: var(--clr-muted);
+    font-size: var(--fs-sm);
+    background-color: var(--clr-bg);
+    padding: var(--space-md);
+    border: 1px dashed #d1d5db;
+    border-radius: var(--radius-sm);
+    margin-top: var(--space-md);
 }
 
-.about-section {
-    background-color: #00ffff;
-    padding: 5px;
+.about-section { /* Fix the basic typography and readability issues (phase 2.2) */
+    background-color:  #f9fafb;
+    padding: 3rem 1.5rem;
     text-align: center;
 }
 
-.about-section h2 {
-    color: #ff0000;
-    font-size: 12px;
+.about-section h2 { /* Fix the basic typography and readability issues (phase 2.2) */
+    color:var(--clr-text);
+    font-size: var(--fs-xl);
     text-decoration: underline;
+    margin-bottom: var(--space-sm);
 }
 
-.about-section p {
-    font-size: 4px;
+.about-section p { /* Fix the basic typography and readability issues (phase 2.2) */
+    font-size: var(--fs-base);
     color: #000000;
-    margin: 2px 0;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.6;
 }
 
-.stats {
-    margin: 5px 0;
+.stats { /* Fix the basic typography and readability issues (phase 2.2) */
+    margin: var(--space-lg) 0;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap
 }
 
-.stat-item {
-    display: inline-block;
+.stat-item { /* Fix the basic typography and readability issues (phase 2.2) */
+    display: flex;
     margin: 2px;
-    background-color: #ff00ff;
-    color: #ffffff;
-    padding: 2px;
-    border: 1px solid #000000;
+    background-color:  var(--clr-surface);
+    color: var(--clr-text);
+    padding: var(--space-md); /* Establish proper spacing and layout structure (phase 2.3) */
+    border-radius: var(--radius-sm); 
+    min-width: 140px; 
+    text-align: center;
+    box-shadow: var(--shadow-sm);
 }
 
-.stat-item h3 {
-    font-size: 6px;
+.stat-item h3 { /* Fix the basic typography and readability issues (phase 2.2) */
+    font-size: var(--fs-xl);
+    color: var(--clr-secondary);
+    margin-bottom: var(--space-xs); /* Establish proper spacing and layout structure (phase 2.3) */
 }
 
-.stat-item p {
-    font-size: 3px;
+.stat-item p { /* Fix the basic typography and readability issues (phase 2.2) */
+    font-size: var(--fs-sm);
+    color: var(--clr-muted)
 }
 
-.main-footer {
-    background-color: #000000;
-    color: #ff00ff;
-    padding: 3px;
-    text-align: left;
-    border-top: 5px solid #ffff00;
+.main-footer { /* Fix the basic typography and readability issues (phase 2.2) */
+    background-color: var(--clr-surface);
+    color: var(--clr-text);
+    padding: var(--space-md);
+    border-top: 1px solid #e5e7eb;
 }
 
-.footer-content {
-    font-size: 3px;
+.footer-content { /* Fix the basic typography and readability issues (phase 2.2) */
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    text-align: center;
 }
 
-.footer-links {
-    margin-top: 2px;
+.footer-links { /* Fix the basic typography and readability issues (phase 2.2) */
+    margin-top: var(--space-sm);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
 }
 
 .footer-links a {
-    color: #00ff00;
+    color: var(--clr-primary);
     text-decoration: none;
-    margin-right: 2px;
-    font-size: 2px;
+    font-size: var(--fs-sm);
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover { /* Add hover effects and micro-interactions (phase 4.1) */
+    color: var(--clr-secondary);
+    text-decoration: underline;
 }
 
 .modal {
@@ -379,45 +478,73 @@ body {
     line-height: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Final responsive testing on all devices (phase 4.5) */
     .site-title {
         font-size: 30px;
     }
     
     .hero-title {
-        font-size: 40px;
+        font-size: 2rem;
     }
     
-    .search-input {
-        width: 80px;
+    .search-input { 
+        width: 100%;
     }
     
     .recipe-card {
-        margin: 3px 0;
+        padding: 1rem;
+    }
+
+    .recipe-grid {
+        grid-template-columns: 1fr;
     }
     
     .recipe-image {
-        width: 30px;
-        height: 30px;
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        margin-bottom: 0.5rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Final responsive testing on all devices (phase 4.5) */
     .site-title {
         font-size: 20px;
     }
     
     .hero-title {
-        font-size: 25px;
+        font-size: 1.75rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
     }
     
-    .nav-list li {
-        display: block;
-        margin: 1px 0;
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .nav-list a {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        text-align: center;
+        border-radius: 6px;
     }
     
     .modal-content {
-        width: 250px;
-        margin: 20% auto;
+        width: 90%;
+        margin: 15% auto;
+    }
+
+    .main-footer {
+        padding: var(--space-sm);
+    }
+
+    .footer-content {
+        font-size: var(--fs-sm);
     }
 }
