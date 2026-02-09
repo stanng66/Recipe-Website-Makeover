@@ -1,11 +1,12 @@
 :root { /* Set up CSS variables for your new design system (phase 2.1) */
     /* Colours */
-    --clr-bg: #fafafa; /* Background colour */
-    --clr-surface: #ffffff;
-    --clr-primary: #ff7a18; /* Primary colour */
-    --clr-secondary: #4caf50; /* secondary colour */
-    --clr-text: #333; /* Colour */
-    --clr-muted: #777;
+    --clr-bg: #ECE3DE; /* Background colour */ /* Isabelline */
+    --clr-surface: #B0D3E6; /* Background colour */ /* Columbia Blue */
+    --clr-primary: #DE83CB; /* French Mauve */
+    --clr-secondary: #D7B4DC; /* Pink Lavender */
+    --clr-accent: #FA86B2; /* Light Pink */
+    --clr-text: #3a2f3a;; /* text colour */ /* deep muted plum (derived) */
+    --clr-muted: #6f5f6f; /* Muted text colour */
 
     /* Typography */
     --fs-base: 16px;
@@ -101,7 +102,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 }
 
 .hero-section { 
-    background-color: linear-gradient(
+    background: linear-gradient(
         135deg,
         var(--clr-primary),
         var(--clr-secondary)
@@ -191,7 +192,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 }
 
 .recipes-section h2 {
-    color: #0000ff;
+    color: var(--clr-primary);
     font-size: 15px;
     text-align: center;
     text-decoration: underline;
@@ -270,20 +271,20 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .recipe-category { /* Improve the recipe detail page layout (phase 3.3) */ 
     font-size: var(--fs-base);
-    color: #000000;
-    background-color: #ffffff;
+    color: var(--clr-text);
+    background-color: var(--clr-bg);
     padding: 1px;
     display: inline-block;
 }
 
 .recipe-time { /* Improve the recipe detail page layout (phase 3.3) */ 
     font-size: var(--fs-base);
-    color: #0000ff;
+    color: var(--clr-secondary);
 }
 
 .recipe-difficulty { /* Improve the recipe detail page layout (phase 3.3) */ 
     font-size: var(--fs-base);
-    color: #ff0000;
+    color: var(--clr-accent);
 }
 
 .recipe-rating { /* Improve the recipe detail page layout (phase 3.3) */ 
@@ -294,7 +295,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .recipe-description { /* Improve the recipe detail page layout (phase 3.3) */ /*need to change this */
     font-size: var(--fs-base);
-    color: #000000;
+    color: var(--clr-muted);
     margin: 2px 0;
     line-height: 1;
 }
@@ -336,7 +337,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 }
 
 .about-section { /* Fix the basic typography and readability issues (phase 2.2) */
-    background-color:  #f9fafb;
+    background-color:  var(--clr-bg);
     padding: 3rem 1.5rem;
     text-align: center;
 }
@@ -428,14 +429,15 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 0, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-    background-color: #ffff00;
+    background-color: var(--clr-surface);
     margin: 10% auto;
     padding: 10px;
-    border: 5px solid #ff0000;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
     width: 300px;
     max-width: 90%;
 }
@@ -459,7 +461,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .modal-recipe-title {
     font-size: 10px;
-    color: #ff00ff;
+    color: var(--clr-primary);
     margin: 2px 0;
 }
 
