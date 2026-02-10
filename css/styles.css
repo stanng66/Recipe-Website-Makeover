@@ -57,6 +57,7 @@ body { /* fixed (phase 2) */
     font-size: var(--fs-xl);
     text-decoration: none;
     font-weight: normal;
+    text-align: center;
 }
 
 .main-nav {
@@ -67,6 +68,7 @@ body { /* fixed (phase 2) */
     list-style: none;
     display: flex;
     gap: var(--space-sm);
+    justify-content: center;
 }
 
 .nav-list li {
