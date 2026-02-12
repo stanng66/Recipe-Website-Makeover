@@ -87,7 +87,7 @@ body { /* fixed (phase 2) */
 
 button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
     color: white;
-    background-color: var(--clr-primary);
+    background-color: var(--clr-accent);
 }
 
 .main-content {
@@ -195,9 +195,9 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .recipes-section h2 {
     color: var(--clr-primary);
-    font-size: 15px;
+    font-size: var(--fs-lg);
     text-align: center;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .sort-controls { /* Fix navigation and basic user flow (phase 2.5) */
@@ -299,7 +299,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
     font-size: var(--fs-base);
     color: var(--clr-muted);
     margin: 2px 0;
-    line-height: 1;
+    line-height: 1.4;
 }
 
 .recipe-actions {
@@ -340,6 +340,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .about-section { /* Fix the basic typography and readability issues (phase 2.2) */
     background-color:  var(--clr-bg);
+    color: var(--clr-text);
     padding: 3rem 1.5rem;
     text-align: center;
 }
@@ -356,7 +357,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
     color: #000000;
     margin: 0 auto;
     max-width: 600px;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .stats { /* Fix the basic typography and readability issues (phase 2.2) */
