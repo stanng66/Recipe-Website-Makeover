@@ -5,7 +5,7 @@
     --clr-primary: #DE83CB; /* French Mauve */
     --clr-secondary: #D7B4DC; /* Pink Lavender */
     --clr-accent: #FA86B2; /* Light Pink */
-    --clr-text: #3a2f3a;; /* text colour */ /* deep muted plum (derived) */
+    --clr-text: #3a2f3a; /* text colour */ /* deep muted plum (derived) */
     --clr-muted: #6f5f6f; /* Muted text colour */
 
     /* Typography */
@@ -113,7 +113,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
     padding: var(--space-lg) var(--space-md);
     text-align: center;
     border-radius: var(--radius-md);
-     box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-md);
 }
 
 .hero-title { /* fixed heading (phase 2) */
@@ -365,7 +365,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
     display: flex;
     justify-content: center;
     gap: var(--space-md);
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .stat-item { /* Fix the basic typography and readability issues (phase 2.2) */
@@ -463,7 +463,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 }
 
 .modal-recipe-title {
-    font-size: 10px;
+    font-size: var(--fs-lg);
     color: var(--clr-primary);
     margin: 2px 0;
 }
@@ -473,15 +473,16 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 }
 
 .modal-ingredients h4, .modal-instructions h4 {
-    font-size: 6px;
+    font-size: var(--fs-base);
     color: #0000ff;
     text-decoration: underline;
 }
 
 .modal-ingredients ul, .modal-instructions ol {
-    font-size: 4px;
+    font-size: var(--fs-base);
     color: #000000;
     margin-left: 10px;
+    line-height: 1.5;
 }
 
 .modal-ingredients li, .modal-instructions li {
