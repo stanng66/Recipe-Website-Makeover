@@ -308,7 +308,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .favorite-btn, .view-btn { /* Fix image presentation and sizing (phase 3.5) */
     background-color: var(--clr-primary);
-    color: #ffffff;
+    color: var(--clr-bg);
     border: none;
     padding: var(--space-xs) var(--space-sm);
     font-size: var(--fs-sm);
@@ -354,7 +354,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .about-section p { /* Fix the basic typography and readability issues (phase 2.2) */
     font-size: var(--fs-base);
-    color: #000000;
+    color: var(--clr-text);
     margin: 0 auto;
     max-width: 600px;
     line-height: 1.5;
@@ -446,7 +446,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 }
 
 .close-modal {
-    color: #ff0000;
+    color: var(--clr-accent);
     float: right;
     font-size: 20px;
     font-weight: bold;
@@ -457,7 +457,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border: 2px solid #0000ff;
+    border: 2px solid var(--clr-primary);
     float: left;
     margin-right: 5px;
 }
@@ -474,13 +474,13 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
 .modal-ingredients h4, .modal-instructions h4 {
     font-size: var(--fs-base);
-    color: #0000ff;
+    color: var(--clr-secondary);
     text-decoration: underline;
 }
 
 .modal-ingredients ul, .modal-instructions ol {
     font-size: var(--fs-base);
-    color: #000000;
+    color: var(--clr-text);
     margin-left: 10px;
     line-height: 1.5;
 }
@@ -568,5 +568,18 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 
     .hero-title {
         font-size: 3.5rem;
+    }
+}
+
+/* Dark Mode Theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-bg: #1e1b24;
+        --clr-surface: #2a2433;
+        --clr-primary: #DE83CB;
+        --clr-secondary: #D7B4DC;
+        --clr-accent: #FA86B2;
+        --clr-text: #f5f2f7;
+        --clr-muted: #b8a8b8;
     }
 }
