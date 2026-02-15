@@ -572,7 +572,7 @@ button:hover, .nav-list a:hover { /* Visual Polish (phase 4.1) */
 }
 
 /* Dark Mode Theme */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) { /* implements dark mode or light mode based on users visual setting preference */
     :root {
         --clr-bg: #1e1b24;
         --clr-surface: #2a2433;
